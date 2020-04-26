@@ -1,4 +1,4 @@
-# TicTocGame
+# TicTacToeGame
 
 First Game developed using Pygame Module.
 
