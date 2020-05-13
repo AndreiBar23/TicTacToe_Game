@@ -17,6 +17,8 @@ HEIGHT = 600
 window_size = (WIDTH,HEIGHT)
 boxes = []
 swap = {0: 1, 1: 0}
+#line coordinates x and y 
+
 
 #define game x and 0 graphics
 flame_png_path = os.path.join("assets", "flame.png")
@@ -88,10 +90,10 @@ def populate_box_coordinates():
     outputCoordinatesBox = []
     
     #firstBox
-    x,y =line_intersection([[266,0],[266,600]],[[0,200],[800,200]])
+    x,y =line_intersection(coordinates['line_1'].return_point_coordinates(),coordinates['line_3'].return_point_coordinates())
     outputCoordinatesBox.append([0,0,x,y])
     #secondBox
-    x,y = line_intersection([[532,0],[532,600]],[[0,200],[800,200]])
+    x,y = line_intersection(coordinates['line_2'].return_point_coordinates(),coordinates['line_3'].return_point_coordinates())
     outputCoordinatesBox.append([266,0,x,y])
     #thirdBox
     outputCoordinatesBox.append([532,0,800,200])
@@ -202,5 +204,5 @@ while run_game:
         game_status = game_validation()
         pygame.display.update()
     if(game_status):
-        time.sleep(1500)
+        pygame.time.delay(2500000)
 
